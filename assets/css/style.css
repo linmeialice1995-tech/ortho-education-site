@@ -335,14 +335,16 @@ ul, ol { padding-left: 1.3em; }
 /* 7. 病人回饋（示範） */
 .demo-note { color: #8a5413; font-size: 15px; }
 .reviews-track {
-  display: grid; grid-auto-flow: column; grid-auto-columns: 86%; gap: 20px;
+  display: flex; gap: 20px;
   overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
   padding: 8px 4px 20px; scrollbar-width: none;
 }
 .reviews-track::-webkit-scrollbar { display: none; }
-@media (min-width: 640px) { .reviews-track { grid-auto-columns: calc(50% - 10px); } }
-@media (min-width: 992px) { .reviews-track { grid-auto-columns: calc(33.333% - 14px); gap: 21px; } }
+.reviews-track > .review-card { flex: 0 0 86%; }
+@media (min-width: 640px) { .reviews-track > .review-card { flex-basis: calc(50% - 10px); } }
+@media (min-width: 992px) { .reviews-track > .review-card { flex-basis: calc((100% - 40px) / 3); } }
 .review-card {
+  margin: 0; /* 移除 <figure> 預設的左右 40px 外距 */
   scroll-snap-align: start; background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius-sm);
   padding: 28px; display: flex; flex-direction: column;
 }

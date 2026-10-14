@@ -425,7 +425,7 @@
     }).join("");
     function step(dir) {
       var card = track.querySelector(".review-card");
-      var gap = parseFloat(getComputedStyle(track).columnGap) || 20;
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 20; // flex 的 gap 也會反映在 columnGap
       track.scrollBy({ left: dir * (card.getBoundingClientRect().width + gap), behavior: "smooth" });
     }
     document.getElementById("reviews-prev").addEventListener("click", function () { step(-1); });
