@@ -63,27 +63,7 @@
       </div>
     </section>
 
-    <!-- 2. 關於醫師＋年資圓形徽章 -->
-    <section class="section-pad" id="about">
-      <div class="container about-grid">
-        <div>
-          <h2 class="about-title">您好，我是<span data-bind="doctor.name">周以恆</span>醫師 <span class="badge-demo">虛構示範</span></h2>
-          <p class="muted-lg" data-bind="doctor.intro"></p>
-          <p class="muted-lg"><span data-bind="doctor.tagline"></span> 有任何疑問，歡迎<a href="#booking">預約看診</a>當面討論。</p>
-          <ul class="tags" data-list="doctor.specialties" data-list-class="tag"></ul>
-        </div>
-        <div class="featured-circle">
-          <p class="featured-text"><span class="featured-number" data-bind="doctor.experienceYears">〇〇</span><span class="featured-label" data-bind="doctor.experienceLabel">年 脊椎手術經驗</span></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. 照片區 -->
-    <section class="gallery-v3" aria-label="診所照片">
-      <div class="container gallery-grid" id="gallery"></div>
-    </section>
-
-    <!-- 4. 專長 -->
+    <!-- 2. 專長 -->
     <section class="section-pad">
       <div class="container">
         <h2 class="section-title">專長領域</h2>
@@ -105,6 +85,26 @@
           </article>
         </div>
       </div>
+    </section>
+
+    <!-- 3. 關於醫師＋年資圓形徽章 -->
+    <section class="section-pad" id="about" style="padding-top:0">
+      <div class="container about-grid">
+        <div>
+          <h2 class="about-title">您好，我是<span data-bind="doctor.name">周以恆</span>醫師 <span class="badge-demo">虛構示範</span></h2>
+          <p class="muted-lg" data-bind="doctor.intro"></p>
+          <p class="muted-lg"><span data-bind="doctor.tagline"></span> 有任何疑問，歡迎<a href="#booking">預約看診</a>當面討論。</p>
+          <ul class="tags" data-list="doctor.specialties" data-list-class="tag"></ul>
+        </div>
+        <div class="featured-circle">
+          <p class="featured-text"><span class="featured-number" data-bind="doctor.experienceYears">〇〇</span><span class="featured-label" data-bind="doctor.experienceLabel">年 脊椎手術經驗</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 照片區 -->
+    <section class="gallery-v3" aria-label="診所照片">
+      <div class="container gallery-grid" id="gallery"></div>
     </section>
 
     <!-- 5. 經歷時間軸 -->
