@@ -302,6 +302,71 @@
     });
   }
 
+  /* 首頁大圖輪播＋輪播文字（資料來自 SITE.hero） */
+  function renderHero() {
+    var media = document.getElementById("hero-media");
+    var rotator = document.getElementById("hero-rotator");
+    var hero = SITE.hero;
+    if (!media || !rotator || !hero) return;
+
+    var dots = document.getElementById("hero-dots");
+    media.querySelectorAll("img").forEach(function (img) { img.remove(); });
+    var imgs = hero.slides.map(function (s, i) {
+      var img = document.createElement("img");
+      img.src = url(s.src);
+      img.alt = s.alt;
+      img.width = 1600; img.height = 1000;
+      if (i > 0) img.loading = "lazy";
+      if (i === 0) img.className = "is-active";
+      media.insertBefore(img, dots);
+      return img;
+    });
+    dots.innerHTML = hero.slides.map(function (s, i) {
+      return '<button type="button" aria-label="第 ' + (i + 1) + ' 張圖片"' + (i === 0 ? ' aria-current="true"' : "") + "></button>";
+    }).join("");
+    var dotEls = dots.querySelectorAll("button");
+
+    rotator.innerHTML = hero.words.map(function (w, i) {
+      return "<span" + (i === 0 ? ' class="is-active"' : "") + ">" + esc(w) + "</span>";
+    }).join("");
+    var words = rotator.querySelectorAll("span");
+
+    var slide = 0, word = 0, tick = 0, timer = null;
+    function showSlide(n) {
+      imgs[slide].classList.remove("is-active");
+      dotEls[slide].removeAttribute("aria-current");
+      slide = (n + imgs.length) % imgs.length;
+      imgs[slide].classList.add("is-active");
+      dotEls[slide].setAttribute("aria-current", "true");
+    }
+    function nextWord() {
+      var old = words[word];
+      old.classList.remove("is-active");
+      old.classList.add("is-leaving");
+      setTimeout(function () { old.classList.remove("is-leaving"); }, 500);
+      word = (word + 1) % words.length;
+      words[word].classList.add("is-active");
+    }
+    function start() {
+      if (timer) return;
+      timer = setInterval(function () {
+        nextWord();
+        tick++;
+        if (tick % 2 === 0) showSlide(slide + 1); // 圖片每兩次文字切換換一張
+      }, hero.interval || 3000);
+    }
+    function stop() { clearInterval(timer); timer = null; }
+
+    dotEls.forEach(function (b, i) {
+      b.addEventListener("click", function () { stop(); showSlide(i); tick = 0; start(); });
+    });
+
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return; // 減少動態效果：維持第一張圖與第一個詞
+    start();
+    document.addEventListener("visibilitychange", function () { document.hidden ? stop() : start(); });
+  }
+
   /* 分享：LINE 與複製連結（使用 canonical 正式網址） */
   function setupShare() {
     var canonical = document.querySelector('link[rel="canonical"]');
@@ -351,5 +416,6 @@
   renderArticleList();
   renderArticlePage();
   renderSchedule();
+  renderHero();
   setupShare();
 })();

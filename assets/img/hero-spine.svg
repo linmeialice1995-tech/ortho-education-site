@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="脊椎示意插圖">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3f0f1"/><stop offset="1" stop-color="#bfdcdf"/></linearGradient>
+    <linearGradient id="v" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9ebed"/></linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#2a8a96" stop-opacity=".35"/><stop offset="1" stop-color="#2a8a96" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <g stroke="#115a69" stroke-opacity=".06" stroke-width="2">
+    <path d="M0 200H1600M0 400H1600M0 600H1600M0 800H1600M200 0V1000M400 0V1000M600 0V1000M800 0V1000M1000 0V1000M1200 0V1000M1400 0V1000"/>
+  </g>
+  <circle cx="1180" cy="520" r="420" fill="url(#glow)"/>
+  <circle cx="1180" cy="520" r="330" fill="none" stroke="#17707f" stroke-opacity=".18" stroke-width="2" stroke-dasharray="6 14"/>
+  <g transform="translate(1180 120)">
+    <g fill="url(#v)" stroke="#115a69" stroke-opacity=".35" stroke-width="3">
+      <rect x="-118" y="0" width="236" height="96" rx="34"/>
+      <rect x="-130" y="140" width="260" height="104" rx="36"/>
+      <rect x="-140" y="288" width="280" height="110" rx="38"/>
+      <rect x="-146" y="442" width="292" height="114" rx="40"/>
+      <rect x="-150" y="600" width="300" height="118" rx="42"/>
+    </g>
+    <g fill="#2a8a96" opacity=".85">
+      <rect x="-100" y="104" width="200" height="28" rx="14"/>
+      <rect x="-110" y="252" width="220" height="28" rx="14"/>
+      <rect x="-118" y="406" width="236" height="28" rx="14"/>
+      <rect x="-122" y="564" width="244" height="28" rx="14"/>
+    </g>
+    <g stroke="#0d4552" stroke-opacity=".45" stroke-width="4" fill="none" stroke-linecap="round">
+      <path d="M-118 48h-70M118 48h70M-130 192h-78M130 192h78M-140 343h-84M140 343h84M-146 499h-88M146 499h88M-150 659h-90M150 659h90"/>
+    </g>
+    <circle cx="-150" cy="499" r="0" fill="#c98b3c"/>
+  </g>
+  <g fill="#ffffff" opacity=".7"><circle cx="300" cy="830" r="140"/><circle cx="160" cy="140" r="60"/></g>
+</svg>

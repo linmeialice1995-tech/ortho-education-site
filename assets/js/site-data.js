@@ -12,6 +12,19 @@ window.SITE = {
   siteUrl: "https://linmeialice1995-tech.github.io/ortho-education-site", // 部署後改成正式網址（不要結尾斜線）
   isDemo: true, // 正式上線改成 false，會移除頂端「作品集示範」提示列
 
+  /* 首頁大圖輪播與輪播文字
+     slides：換成診所或醫師照片時，把 src 改成照片路徑（建議 1600×1000，橫式 16:10）
+     words：標題「讓你重新＿＿」輪流顯示的文字 */
+  hero: {
+    words: ["好好走路", "安心睡覺", "回到工作", "享受生活"],
+    interval: 3000, // 文字切換間隔（毫秒）；圖片每兩次文字切換換一張
+    slides: [
+      { src: "assets/img/hero-consult.svg", alt: "醫師看診說明脊椎影像的示意插圖" },
+      { src: "assets/img/hero-spine.svg", alt: "腰椎與椎間盤的示意插圖" },
+      { src: "assets/img/hero-walk.svg", alt: "術後恢復、戶外散步的示意插圖" }
+    ]
+  },
+
   /* 醫師資料 */
   doctor: {
     name: "周以恆",

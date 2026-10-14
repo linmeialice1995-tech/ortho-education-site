@@ -65,6 +65,16 @@ python -m http.server 8080
 
 把照片放到 `assets/img/doctor.jpg`（建議 4:5 直式、寬 800px 以上），然後在 `site-data.js` 把 `photo` 改成 `"assets/img/doctor.jpg"`。
 
+### 2-1. 首頁大圖輪播與輪播文字
+
+首頁頂端的大圖與「讓你重新＿＿」輪播文字，設定在 `site-data.js` 的 `hero`：
+
+- `slides`：輪播圖片。目前是示範插圖（`assets/img/hero-*.svg`），換成診所或醫師照片時，把照片放進 `assets/img/`，再修改 `src` 與 `alt`。建議 1600×1000 的橫式照片，主角放在畫面中間偏右（桌機版左側會被文字卡片蓋住）。
+- `words`：輪播文字，可增減。
+- `interval`：文字切換間隔（毫秒），圖片每兩次文字切換換一張。
+
+使用者若在系統設定「減少動態效果」，輪播會自動停止。
+
 ### 3. SEO 與分享資訊（需要逐頁修改）
 
 LINE 和 Facebook 的分享預覽不會執行 JavaScript，所以每個 HTML 檔 `<head>` 內的資訊需要寫死在檔案裡。替換醫師姓名或網域時，請用編輯器的「全專案搜尋取代」：
