@@ -1,30 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="醫師看診說明示意插圖">
-  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef6f7"/><stop offset="1" stop-color="#cfe4e7"/></linearGradient></defs>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1f6ff"/><stop offset="1" stop-color="#dbe8ff"/></linearGradient></defs>
   <rect width="1600" height="1000" fill="url(#bg)"/>
-  <rect x="0" y="760" width="1600" height="240" fill="#b9d7db"/>
+  <rect x="0" y="760" width="1600" height="240" fill="#cddfff"/>
   <rect x="0" y="740" width="1600" height="30" fill="#ffffff" opacity=".8"/>
   <!-- 螢幕 -->
   <g transform="translate(1080 200)">
-    <rect width="400" height="300" rx="20" fill="#0a3540"/>
-    <rect x="18" y="18" width="364" height="264" rx="10" fill="#123f4a"/>
-    <g fill="#d6e9eb" opacity=".85">
+    <rect width="400" height="300" rx="20" fill="#10233f"/>
+    <rect x="18" y="18" width="364" height="264" rx="10" fill="#172f55"/>
+    <g fill="#e2ecff" opacity=".85">
       <rect x="170" y="40" width="60" height="30" rx="10"/><rect x="166" y="82" width="68" height="32" rx="10"/>
       <rect x="162" y="126" width="76" height="34" rx="11"/><rect x="158" y="172" width="84" height="36" rx="12"/>
       <rect x="156" y="220" width="88" height="38" rx="12"/>
     </g>
     <circle cx="160" cy="196" r="30" fill="none" stroke="#e7b36a" stroke-width="5"/>
-    <rect x="180" y="300" width="40" height="80" fill="#0a3540"/><rect x="120" y="372" width="160" height="16" rx="8" fill="#0a3540"/>
+    <rect x="180" y="300" width="40" height="80" fill="#10233f"/><rect x="120" y="372" width="160" height="16" rx="8" fill="#10233f"/>
   </g>
   <!-- 醫師 -->
   <g transform="translate(720 260)">
     <path d="M-170 520c0-150 76-250 170-250s170 100 170 250Z" fill="#ffffff"/>
     <path d="M-170 520c0-130 60-220 140-240l30 240Z M170 520c0-130-60-220-140-240l-30 240Z" fill="#f4f7f8" stroke="#d4dbde" stroke-width="3"/>
-    <path d="M-40 284 0 360l40-76" fill="#0d4552"/>
+    <path d="M-40 284 0 360l40-76" fill="#163a6b"/>
     <rect x="-28" y="210" width="56" height="74" rx="22" fill="#e8c9ab"/>
     <ellipse cx="0" cy="130" rx="88" ry="102" fill="#f0d5b8"/>
     <path d="M-88 120c-6-88 42-130 90-130s92 38 86 130c-12-44-38-66-88-70-42 4-74 28-88 70Z" fill="#26333a"/>
-    <path d="M60 320c22 12 32 38 28 66" fill="none" stroke="#17707f" stroke-width="7" stroke-linecap="round"/>
-    <circle cx="86" cy="398" r="13" fill="none" stroke="#17707f" stroke-width="7"/>
+    <path d="M60 320c22 12 32 38 28 66" fill="none" stroke="#1f6be0" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="86" cy="398" r="13" fill="none" stroke="#1f6be0" stroke-width="7"/>
     <path d="M130 380 360 250" stroke="#f0d5b8" stroke-width="34" stroke-linecap="round"/>
     <path d="M110 400 300 300" stroke="#ffffff" stroke-width="54" stroke-linecap="round"/>
   </g>

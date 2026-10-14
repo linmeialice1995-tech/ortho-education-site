@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="手術室示意插圖">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8f0ff"/><stop offset="1" stop-color="#cfe0ff"/></linearGradient>
+  <radialGradient id="light" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect y="760" width="1600" height="240" fill="#b9cff5"/>
+  <ellipse cx="800" cy="560" rx="520" ry="300" fill="url(#light)"/>
+  <!-- 手術燈 -->
+  <path d="M800 0v120" stroke="#1d4f99" stroke-width="16"/>
+  <ellipse cx="800" cy="170" rx="210" ry="62" fill="#163a6b"/>
+  <ellipse cx="800" cy="160" rx="170" ry="40" fill="#e2ecff"/>
+  <g fill="#ffffff"><circle cx="720" cy="160" r="20"/><circle cx="800" cy="152" r="20"/><circle cx="880" cy="160" r="20"/></g>
+  <!-- 手術台 -->
+  <rect x="420" y="560" width="760" height="70" rx="20" fill="#ffffff"/>
+  <rect x="440" y="520" width="720" height="50" rx="20" fill="#7fb0ff"/>
+  <rect x="770" y="630" width="60" height="150" fill="#1d4f99"/>
+  <rect x="640" y="770" width="320" height="26" rx="13" fill="#163a6b"/>
+  <!-- 監視器 -->
+  <rect x="1240" y="300" width="240" height="170" rx="14" fill="#10233f"/>
+  <path d="M1265 400h40l20-40 26 80 22-60 18 20h64" fill="none" stroke="#5cd0a0" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="1350" y="470" width="20" height="300" fill="#1d4f99"/>
+  <!-- 器械車 -->
+  <rect x="140" y="560" width="200" height="16" rx="8" fill="#1d4f99"/>
+  <rect x="140" y="660" width="200" height="16" rx="8" fill="#1d4f99"/>
+  <path d="M160 576v200M320 576v200" stroke="#1d4f99" stroke-width="10"/>
+  <g fill="#ffffff"><rect x="170" y="530" width="60" height="30" rx="6"/><rect x="250" y="536" width="70" height="24" rx="6"/></g>
+</svg>

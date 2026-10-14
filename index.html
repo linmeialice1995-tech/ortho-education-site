@@ -6,7 +6,7 @@
   <title>周以恆醫師｜脊椎・骨科衛教｜腰椎椎間盤突出、椎管狹窄與脊椎手術</title>
   <meta name="description" content="骨科專科醫師、脊椎外科醫師整理的衛教文章：腰椎椎間盤突出、腰椎管狹窄症、微創脊椎手術與術後復健，用清楚易懂的方式說明。（作品集示範網站）">
   <link rel="canonical" href="https://linmeialice1995-tech.github.io/ortho-education-site/">
-  <meta name="theme-color" content="#0d4552">
+  <meta name="theme-color" content="#247cff">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_TW">
@@ -22,7 +22,7 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
 
   <script type="application/ld+json">
@@ -40,67 +40,65 @@
   <div id="site-header"></div>
 
   <main id="main">
-    <!-- Hero：大圖輪播＋輪播文字 -->
-    <section class="hero hero-stage-wrap">
+    <!-- 1. Hero：大圖輪播＋右下白色文字框 -->
+    <section class="hero-v3" id="hero">
       <div class="container">
         <div class="hero-stage">
           <div class="hero-media" id="hero-media" aria-roledescription="carousel" aria-label="首頁圖片">
             <img src="assets/img/hero-consult.svg" alt="醫師看診說明脊椎影像的示意插圖" class="is-active" width="1600" height="1000">
             <div class="hero-dots" id="hero-dots"></div>
           </div>
-          <div class="hero-panel">
-            <span class="eyebrow">脊椎外科｜SPINE CARE</span>
+          <div class="hero-text">
             <h1>
               <span class="sr-only">讓你重新好好走路、安心睡覺、回到工作、享受生活</span>
-              <span aria-hidden="true">讓你重新<br><span class="rotator" id="hero-rotator"><span class="is-active">好好走路</span></span></span>
+              <span aria-hidden="true">讓你重新<span class="rotator" id="hero-rotator"><span class="is-active">好好走路</span></span></span>
             </h1>
-            <p class="hero-lead">腰痛、腳麻、走不遠？先弄清楚原因，再一起決定要不要開刀。</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="articles.html?cat=lumbar">脊椎衛教文章 <span data-icon="arrowRight"></span></a>
-              <a class="hero-phone" data-bind-href="clinic.phoneHref" href="#"><span data-icon="phone"></span><span data-bind="clinic.phone">02-0000-0000</span></a>
+            <p>腰痛、腳麻、走不遠？先弄清楚原因，再一起決定要不要開刀。</p>
+            <div class="hero-links">
+              <a class="custom-link" href="#about">了解更多</a>
+              <a class="contact-phone" data-bind-href="clinic.phoneHref" href="#"><span data-icon="phone"></span><span data-bind="clinic.phone">02-0000-0000</span></a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 醫師簡介 -->
-    <section class="section doctor-strip-wrap">
-      <div class="container">
-        <div class="doctor-strip">
-          <img class="doctor-strip-photo" data-bind-src="doctor.photo" src="assets/img/doctor.svg" alt="醫師照片（示範用插圖）" width="160" height="200">
-          <div>
-            <span class="eyebrow">醫師簡介</span>
-            <h2><span data-bind="doctor.nameWithTitle">周以恆 醫師</span> <span class="badge-demo">示範</span></h2>
-            <p class="role"><span data-bind="doctor.title">骨科專科醫師</span>・<span data-bind="doctor.focus">脊椎外科</span></p>
-            <p data-bind="doctor.intro"></p>
-            <ul class="tags" data-list="doctor.specialties" data-list-class="tag"></ul>
-            <p style="margin:16px 0 0"><a class="link-more" href="about.html">完整醫師介紹 →</a></p>
-          </div>
+    <!-- 2. 關於醫師＋年資圓形徽章 -->
+    <section class="section-pad" id="about">
+      <div class="container about-grid">
+        <div>
+          <h2 class="about-title">您好，我是<span data-bind="doctor.name">周以恆</span>醫師 <span class="badge-demo">虛構示範</span></h2>
+          <p class="muted-lg" data-bind="doctor.intro"></p>
+          <p class="muted-lg"><span data-bind="doctor.tagline"></span> 有任何疑問，歡迎<a href="#booking">預約看診</a>當面討論。</p>
+          <ul class="tags" data-list="doctor.specialties" data-list-class="tag"></ul>
+        </div>
+        <div class="featured-circle">
+          <p class="featured-text"><span class="featured-number" data-bind="doctor.experienceYears">〇〇</span><span class="featured-label" data-bind="doctor.experienceLabel">年 脊椎手術經驗</span></p>
         </div>
       </div>
     </section>
 
-    <!-- 專長 -->
-    <section class="section" style="padding-top:0">
+    <!-- 3. 照片區 -->
+    <section class="gallery-v3" aria-label="診所照片">
+      <div class="container gallery-grid" id="gallery"></div>
+    </section>
+
+    <!-- 4. 專長 -->
+    <section class="section-pad">
       <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">專長領域</span>
-          <h2>以脊椎手術為主的骨科專科醫師</h2>
-          <p>多數腰椎問題可以先從保守治療開始。當症狀持續影響生活、或出現神經壓迫的警訊時，再依檢查結果評估是否需要手術。</p>
-        </div>
+        <h2 class="section-title">專長領域</h2>
         <div class="grid grid-3">
-          <article class="card">
+          <article class="card feature-card">
             <div class="card-icon" data-icon="spine"></div>
             <h3>腰椎退化性疾病</h3>
             <p>腰椎椎間盤突出、坐骨神經痛與腰椎管狹窄症的診斷，以及保守治療與手術的評估。</p>
           </article>
-          <article class="card">
+          <article class="card feature-card">
             <div class="card-icon" data-icon="surgery"></div>
             <h3>脊椎手術</h3>
             <p>神經減壓、椎間盤切除與脊椎融合等手術，依病情評估傳統或微創方式。</p>
           </article>
-          <article class="card">
+          <article class="card feature-card">
             <div class="card-icon" data-icon="rehab"></div>
             <h3>術後照護與復健</h3>
             <p>從術後下床、傷口照護到恢復工作與運動，陪伴病人逐步回到日常生活。</p>
@@ -109,88 +107,70 @@
       </div>
     </section>
 
-    <!-- 治療路徑 -->
-    <section class="section section-alt">
+    <!-- 5. 經歷時間軸 -->
+    <section class="section-pad section-gray" id="timeline">
       <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">治療路徑</span>
-          <h2>不是每個脊椎問題都需要開刀</h2>
-          <p>從評估到復健，每一步都會說明清楚，讓你了解自己在哪個階段、接下來有哪些選擇。</p>
-        </div>
-        <ol class="steps">
-          <li class="step">
-            <span class="step-num">1</span>
-            <h3>評估與診斷</h3>
-            <p>問診與神經學檢查，判斷疼痛與麻木的來源；需要時才安排 X 光或 MRI。</p>
-          </li>
-          <li class="step">
-            <span class="step-num">2</span>
-            <h3>保守治療</h3>
-            <p>保持活動、運動治療、藥物與注射等。許多病人在這個階段就能改善。</p>
-          </li>
-          <li class="step">
-            <span class="step-num">3</span>
-            <h3>手術評估</h3>
-            <p>症狀持續影響生活、神經功能惡化，且影像與症狀相符時，討論手術的效益與風險。</p>
-          </li>
-          <li class="step">
-            <span class="step-num">4</span>
-            <h3>術後復健</h3>
-            <p>術後早期下床活動，依恢復進度逐步運動、回到工作與日常生活。</p>
-          </li>
-        </ol>
-        <div class="callout callout-warn" style="margin-bottom:0">
-          <div class="callout-title">出現這些症狀，請立即就醫</div>
-          <p>腰痛或坐骨神經痛合併大小便失禁或解不出來、肛門會陰周圍麻木、雙腳快速變得無力，可能是馬尾症候群，需要緊急處理，請直接前往急診。</p>
-        </div>
+        <h2 class="section-title">經歷</h2>
+        <p class="section-sub">學經歷皆為示範欄位，正式使用時請替換為醫師實際資料。</p>
+        <div class="timeline" id="timeline-list"></div>
       </div>
     </section>
 
-    <!-- 衛教分類 -->
-    <section class="section">
+    <!-- 6. 衛教專區 -->
+    <section class="section-pad" id="education">
       <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">脊椎專區</span>
-          <h2>脊椎疾病與手術衛教</h2>
-          <p>從腰椎疾病、手術方式到術後復健，依主題閱讀。</p>
-        </div>
+        <h2 class="section-title">脊椎衛教專區</h2>
+        <p class="section-sub">從腰椎疾病、手術方式到術後復健，依主題閱讀。</p>
         <div class="grid grid-3" data-category-grid="spine"></div>
 
-        <div class="section-head" style="margin:48px 0 20px">
-          <h2 style="font-size:22px">一般骨科衛教</h2>
-          <p>膝蓋、肩膀、骨折、扭傷與骨質疏鬆等常見問題。</p>
-        </div>
+        <h3 class="subsection-title">一般骨科衛教</h3>
         <div class="grid grid-5" data-category-grid="general"></div>
-      </div>
-    </section>
 
-    <!-- 最新文章 -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-head split">
-          <div>
-            <span class="eyebrow">最新文章</span>
-            <h2>最近更新的衛教內容</h2>
-          </div>
+        <div class="section-head split" style="margin-top:56px">
+          <h3 class="subsection-title" style="margin:0">最新文章</h3>
           <a class="link-more" href="articles.html">查看全部文章 →</a>
         </div>
         <div class="grid grid-3" id="latest-articles" data-limit="3"></div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="section">
+    <!-- 7. 病人回饋（示範） -->
+    <section class="section-pad section-gray" id="reviews" data-testimonials-section>
       <div class="container">
-        <div class="cta">
-          <div>
-            <h2>考慮脊椎手術前，先來好好聊聊</h2>
-            <p>衛教文章無法取代面對面看診。帶著你的檢查報告與疑問來門診，我們一起討論最適合的治療方式。</p>
-          </div>
-          <div class="hero-actions">
-            <a class="btn btn-light" data-bind-href="clinic.bookingUrl" href="#">線上掛號</a>
-            <a class="btn btn-outline" href="contact.html">門診時間與交通</a>
-          </div>
+        <h2 class="section-title">病人回饋</h2>
+        <p class="section-sub demo-note">※ 以下為版面示範用的虛構文字，並非真實病人評價。</p>
+        <div class="reviews-track" id="reviews-track" tabindex="0" aria-label="病人回饋（示範）"></div>
+        <div class="reviews-nav">
+          <button type="button" class="reviews-btn" id="reviews-prev" aria-label="上一則">‹</button>
+          <button type="button" class="reviews-btn" id="reviews-next" aria-label="下一則">›</button>
         </div>
+      </div>
+    </section>
+
+    <!-- 8. 預約看診 -->
+    <section class="section-pad" id="booking">
+      <div class="container booking-wrap">
+        <h2 class="section-title">預約看診</h2>
+        <form class="booking-form" id="booking-form" novalidate>
+          <div class="form-grid">
+            <label><span class="sr-only">姓名</span><input type="text" name="name" placeholder="姓名 *" required autocomplete="name"></label>
+            <label><span class="sr-only">聯絡電話</span><input type="tel" name="phone" placeholder="聯絡電話 *" required autocomplete="tel"></label>
+            <label><span class="sr-only">Email</span><input type="email" name="email" placeholder="Email（選填）" autocomplete="email"></label>
+            <label><span class="sr-only">希望看診日期</span><input type="date" name="date" aria-label="希望看診日期"></label>
+            <label class="full"><span class="sr-only">希望時段</span>
+              <select name="session">
+                <option value="">希望時段（選填）</option>
+                <option>上午</option><option>下午</option><option>晚上</option>
+              </select>
+            </label>
+            <label class="full"><span class="sr-only">症狀或想詢問的問題</span><textarea name="message" rows="5" placeholder="簡單描述症狀或想詢問的問題（選填）"></textarea></label>
+          </div>
+          <p class="form-error" id="booking-error" role="alert" hidden></p>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">送出預約需求</button>
+          </div>
+          <p class="form-note">送出後會開啟您的電子郵件程式，將預約需求寄給診所；本網站不會儲存您填寫的任何資料。實際看診時間以診所回覆為準。也可以直接<a data-bind-href="clinic.bookingUrl" href="#">前往線上掛號</a>或撥打 <a data-bind-href="clinic.phoneHref" data-bind="clinic.phone" href="#"></a>。</p>
+        </form>
       </div>
     </section>
   </main>

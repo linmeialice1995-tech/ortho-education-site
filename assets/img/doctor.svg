@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="醫師示範插圖">
-  <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3f0f1"/><stop offset="1" stop-color="#c9e1e3"/></linearGradient></defs>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8f0ff"/><stop offset="1" stop-color="#d3e3ff"/></linearGradient></defs>
   <rect width="400" height="500" fill="url(#bg)"/>
-  <circle cx="320" cy="90" r="120" fill="#2a8a96" opacity=".10"/>
+  <circle cx="320" cy="90" r="120" fill="#247cff" opacity=".10"/>
   <path d="M60 500c0-92 62-150 140-150s140 58 140 150Z" fill="#ffffff"/>
-  <path d="M160 352l40 70 40-70" fill="#0d4552"/>
+  <path d="M160 352l40 70 40-70" fill="#163a6b"/>
   <path d="M60 500c0-80 46-134 108-146l32 146Z M340 500c0-80-46-134-108-146l-32 146Z" fill="#f4f7f8" stroke="#d4dbde" stroke-width="2"/>
-  <path d="M236 380c18 10 26 30 22 52" fill="none" stroke="#17707f" stroke-width="5" stroke-linecap="round"/>
-  <circle cx="256" cy="440" r="10" fill="none" stroke="#17707f" stroke-width="5"/>
+  <path d="M236 380c18 10 26 30 22 52" fill="none" stroke="#1f6be0" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="256" cy="440" r="10" fill="none" stroke="#1f6be0" stroke-width="5"/>
   <rect x="178" y="296" width="44" height="60" rx="18" fill="#e8c9ab"/>
   <ellipse cx="200" cy="230" rx="70" ry="82" fill="#f0d5b8"/>
   <path d="M130 222c-4-70 34-104 72-104s74 30 68 104c-10-36-30-52-70-56-34 4-58 22-70 56Z" fill="#26333a"/>

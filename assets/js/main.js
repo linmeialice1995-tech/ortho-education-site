@@ -48,6 +48,9 @@
     ankle: S + '<path d="M9 2v9.5c0 1-.5 2-1.3 2.6L5 16a2.6 2.6 0 0 0 1.5 4.8H19a2 2 0 0 0 2-2v-.5a3 3 0 0 0-2.2-2.9l-3-1A2.5 2.5 0 0 1 14 12V2"/></svg>',
     surgery: S + '<path d="M3 21 13.5 10.5"/><path d="m13.5 10.5 3-3a2.1 2.1 0 0 1 3 3l-3 3Z"/><path d="M16 13l-3-3"/><path d="M6 18l-1.5 1.5"/></svg>',
     rehab: S + '<circle cx="13" cy="4" r="2"/><path d="m9 21 2.5-6.5L14 16v5"/><path d="M8 11.5 10.5 8h3.5l2 3 3 1"/><path d="m10.5 8-1 5.5"/></svg>',
+    edu: S + '<path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>',
+    check: S + '<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>',
+    star: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9Z"/></svg>',
     menu: S + '<path d="M4 7h16M4 12h16M4 17h16"/></svg>',
     close: S + '<path d="M6 6l12 12M18 6 6 18"/></svg>',
     arrowLeft: S + '<path d="M19 12H5M11 18l-6-6 6-6"/></svg>',
@@ -71,33 +74,41 @@
     body.insertBefore(bar, body.firstChild);
   }
 
-  /* ---------- Header / 導覽 ---------- */
+  /* ---------- Header / 導覽：醫師名稱置中，前三項在左、後三項在右 ---------- */
   var NAV = [
     { href: "index.html", label: "首頁", page: "home" },
     { href: "about.html", label: "醫師介紹", page: "about" },
     { href: "articles.html", label: "衛教文章", page: "articles" },
     { href: "faq.html", label: "常見問題", page: "faq" },
-    { href: "contact.html", label: "看診資訊", page: "contact" }
+    { href: "contact.html", label: "看診資訊", page: "contact" },
+    { href: "index.html#booking", label: "預約看診", page: "booking" }
   ];
 
   function renderHeader() {
     var mount = document.getElementById("site-header");
     if (!mount) return;
-    var links = NAV.map(function (n) {
-      var current = n.page === PAGE || (PAGE === "article" && n.page === "articles");
-      return '<li><a href="' + url(n.href) + '"' + (current ? ' aria-current="page"' : "") + ">" + n.label + "</a></li>";
-    }).join("");
+    function items(list) {
+      return list.map(function (n) {
+        var current = n.page === PAGE || (PAGE === "article" && n.page === "articles");
+        return '<li><a href="' + url(n.href) + '"' + (current ? ' aria-current="page"' : "") + ">" + n.label + "</a></li>";
+      }).join("");
+    }
+    var half = Math.ceil(NAV.length / 2);
+    var brand = function (cls) {
+      return '<a class="brand ' + cls + '" href="' + url("index.html") + '">' +
+        '<span class="brand-name">' + esc(SITE.doctor.nameWithTitle) + "</span>" +
+        '<span class="brand-sub">' + esc(SITE.doctor.title) + (SITE.doctor.focus ? "・" + esc(SITE.doctor.focus) : "") + "</span></a>";
+    };
     mount.outerHTML =
       '<header class="site-header">' +
       '<div class="container header-inner">' +
-      '<a class="brand" href="' + url("index.html") + '">' +
-      '<span class="brand-mark">' + ICONS.logo + "</span>" +
-      '<span class="brand-text"><span class="brand-name">' + esc(SITE.doctor.nameWithTitle) + "</span>" +
-      '<span class="brand-sub">' + esc(SITE.doctor.title) + (SITE.doctor.focus ? "・" + esc(SITE.doctor.focus) : "") + "</span></span></a>" +
+      brand("brand-mobile") +
       '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="開啟選單">' + ICONS.menu + "</button>" +
-      '<nav class="site-nav" id="site-nav" aria-label="主要導覽"><ul>' + links +
-      '<li class="nav-cta"><a class="btn btn-primary" href="' + esc(SITE.clinic.bookingUrl) + '" target="_blank" rel="noopener">線上掛號</a></li>' +
-      "</ul></nav></div></header>";
+      '<nav class="site-nav" id="site-nav" aria-label="主要導覽">' +
+      '<ul class="nav-left">' + items(NAV.slice(0, half)) + "</ul>" +
+      brand("brand-desktop") +
+      '<ul class="nav-right">' + items(NAV.slice(half)) + "</ul>" +
+      "</nav></div></header>";
 
     var toggle = document.querySelector(".nav-toggle");
     var nav = document.getElementById("site-nav");
@@ -108,28 +119,33 @@
       toggle.innerHTML = open ? ICONS.close : ICONS.menu;
     }
     toggle.addEventListener("click", function () { setOpen(!nav.classList.contains("is-open")); });
+    nav.addEventListener("click", function (e) { if (e.target.closest("a")) setOpen(false); }); // 點選同頁錨點後收起選單
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
     document.addEventListener("click", function (e) {
       if (nav.classList.contains("is-open") && !e.target.closest(".site-header")) setOpen(false);
     });
   }
 
-  /* ---------- Footer ---------- */
+  /* ---------- Footer：門診時間／診所資訊／網站導覽 ---------- */
   function renderFooter() {
     var mount = document.getElementById("site-footer");
     if (!mount) return;
-    var cats = SITE.categories.map(function (c) {
-      return '<li><a href="' + url("articles.html?cat=" + c.id) + '">' + esc(c.name) + "</a></li>";
-    }).join("");
+    var c = SITE.clinic, sch = c.schedule;
+    var hours = sch.days.map(function (d, i) {
+      var on = sch.sessions.filter(function (s) { return s.slots[i]; }).map(function (s) { return esc(s.label); });
+      return '<li><span class="day">週' + d + "</span><span>" + (on.length ? on.join("<br>") : "休診") + "</span></li>";
+    }).join("") + '<li><span class="day">週日</span><span>休診</span></li>';
     var pages = NAV.map(function (n) { return '<li><a href="' + url(n.href) + '">' + n.label + "</a></li>"; }).join("");
     mount.outerHTML =
-      '<footer class="site-footer"><div class="container">' +
+      '<footer class="site-footer" id="contact"><div class="container">' +
       '<div class="footer-grid">' +
-      "<div><h3>" + esc(SITE.doctor.nameWithTitle) + "</h3>" +
-      "<p>" + esc(SITE.clinic.name) + "<br>" + esc(SITE.clinic.address) + "<br>電話：" +
-      '<a href="' + esc(SITE.clinic.phoneHref) + '">' + esc(SITE.clinic.phone) + "</a></p></div>" +
+      '<div><h3>門診時間</h3><ul class="hours-list">' + hours + "</ul></div>" +
+      '<div class="footer-contact"><h3>我的診所</h3>' +
+      "<p>" + esc(c.name) + "<br>" + esc(c.address) + "</p>" +
+      '<p>電話：<a href="' + esc(c.phoneHref) + '">' + esc(c.phone) + "</a><br>" +
+      (c.email ? 'Email：<a href="mailto:' + esc(c.email) + '">' + esc(c.email) + "</a><br>" : "") +
+      '<a href="' + esc(c.lineUrl) + '" target="_blank" rel="noopener">LINE 諮詢</a>｜<a href="' + esc(c.mapUrl) + '" target="_blank" rel="noopener">Google 地圖</a></p></div>' +
       "<div><h3>網站導覽</h3><ul>" + pages + "</ul></div>" +
-      "<div><h3>衛教分類</h3><ul>" + cats + "</ul></div>" +
       "</div>" +
       '<p class="footer-disclaimer">本網站衛教內容僅供一般健康資訊參考，不能取代醫師面對面的診斷與治療。若有急性外傷、劇烈疼痛、發燒、肢體麻木無力等情況，請儘速就醫。' +
       (SITE.isDemo ? "<br>此為作品集示範網站，醫師與診所資料皆為虛構，衛教內容尚未經骨科專業人員審閱，請勿作為醫療依據。" : "") +
@@ -367,6 +383,92 @@
     document.addEventListener("visibilitychange", function () { document.hidden ? stop() : start(); });
   }
 
+  /* 首頁照片區 */
+  function renderGallery() {
+    var el = document.getElementById("gallery");
+    if (!el || !SITE.gallery) return;
+    el.innerHTML = SITE.gallery.map(function (g) {
+      return '<img src="' + esc(url(g.src)) + '" alt="' + esc(g.alt) + '" loading="lazy" width="1600" height="1000">';
+    }).join("");
+  }
+
+  /* 首頁經歷時間軸 */
+  function renderTimeline() {
+    var el = document.getElementById("timeline-list");
+    if (!el || !SITE.doctor.timeline) return;
+    el.innerHTML = SITE.doctor.timeline.map(function (t) {
+      return '<div class="tl-node">' +
+        '<div class="tl-icon">' + (ICONS[t.icon] || ICONS.check) + "</div>" +
+        '<div class="tl-date">' + esc(t.period) + "</div>" +
+        '<div class="tl-card"><h3>' + esc(t.title) + "</h3>" +
+        '<p class="tl-place">' + esc(t.place) + '</p><p class="tl-desc">' + esc(t.desc) + "</p></div>" +
+        "</div>";
+    }).join("");
+  }
+
+  /* 首頁病人回饋（示範）：清空 SITE.testimonials 即隱藏整個區塊 */
+  function renderTestimonials() {
+    var section = document.querySelector("[data-testimonials-section]");
+    if (!section) return;
+    var list = SITE.testimonials || [];
+    if (!list.length) { section.hidden = true; return; }
+    var track = document.getElementById("reviews-track");
+    var stars = new Array(6).join(ICONS.star);
+    track.innerHTML = list.map(function (r) {
+      return '<figure class="review-card">' +
+        '<div class="review-stars" aria-hidden="true">' + stars + "</div>" +
+        '<p class="review-title">' + esc(r.title) + "</p>" +
+        '<p class="review-text">' + esc(r.text) + "</p>" +
+        '<figcaption class="review-person"><span class="review-avatar" aria-hidden="true">' + esc(r.name.slice(-1)) + "</span>" +
+        "<span><strong>" + esc(r.name) + "</strong><span>" + esc(r.note) + "</span></span></figcaption>" +
+        "</figure>";
+    }).join("");
+    function step(dir) {
+      var card = track.querySelector(".review-card");
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 20;
+      track.scrollBy({ left: dir * (card.getBoundingClientRect().width + gap), behavior: "smooth" });
+    }
+    document.getElementById("reviews-prev").addEventListener("click", function () { step(-1); });
+    document.getElementById("reviews-next").addEventListener("click", function () { step(1); });
+  }
+
+  /* 首頁預約表單：靜態網站無法接收資料，改為開啟使用者的 Email 程式寄給診所 */
+  function setupBooking() {
+    var form = document.getElementById("booking-form");
+    if (!form) return;
+    var err = document.getElementById("booking-error");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var f = form.elements;
+      var missing = [];
+      ["name", "phone"].forEach(function (k) {
+        var bad = !f[k].value.trim();
+        f[k].setAttribute("aria-invalid", String(bad));
+        if (bad) missing.push(f[k].placeholder.replace(" *", ""));
+      });
+      if (missing.length) {
+        err.textContent = "請填寫：" + missing.join("、");
+        err.hidden = false;
+        f[missing.length && !f.name.value.trim() ? "name" : "phone"].focus();
+        return;
+      }
+      err.hidden = true;
+      var lines = [
+        "姓名：" + f.name.value.trim(),
+        "聯絡電話：" + f.phone.value.trim(),
+        "Email：" + (f.email.value.trim() || "（未填）"),
+        "希望日期：" + (f.date.value || "（未填）"),
+        "希望時段：" + (f.session.value || "（未填）"),
+        "",
+        "症狀或問題：",
+        f.message.value.trim() || "（未填）"
+      ];
+      var subject = "預約看診需求－" + f.name.value.trim();
+      location.href = "mailto:" + SITE.clinic.email +
+        "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+    });
+  }
+
   /* 分享：LINE 與複製連結（使用 canonical 正式網址） */
   function setupShare() {
     var canonical = document.querySelector('link[rel="canonical"]');
@@ -417,5 +519,9 @@
   renderArticlePage();
   renderSchedule();
   renderHero();
+  renderGallery();
+  renderTimeline();
+  renderTestimonials();
+  setupBooking();
   setupShare();
 })();

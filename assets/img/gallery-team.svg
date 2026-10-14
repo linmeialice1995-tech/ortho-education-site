@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="醫療團隊示意插圖">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f8ff"/><stop offset="1" stop-color="#d3e3ff"/></linearGradient></defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="1350" cy="180" r="160" fill="#ffffff" opacity=".6"/>
+  <!-- 左：護理師 -->
+  <g transform="translate(470 420)">
+    <path d="M-130 420c0-120 58-200 130-200s130 80 130 200Z" fill="#7fb0ff"/>
+    <rect x="-24" y="160" width="48" height="66" rx="20" fill="#e8c9ab"/>
+    <ellipse cx="0" cy="90" rx="72" ry="84" fill="#f0d5b8"/>
+    <path d="M-76 84c-6-70 34-104 76-104s82 34 76 104c-14-30-40-48-76-50-36 2-62 20-76 50Z" fill="#3a2a22"/>
+    <path d="M-60 40c20-30 100-30 120 0" stroke="#3a2a22" stroke-width="24" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- 中：醫師（白袍） -->
+  <g transform="translate(800 360)">
+    <path d="M-150 480c0-140 66-230 150-230s150 90 150 230Z" fill="#ffffff"/>
+    <path d="M-34 252 0 330l34-78" fill="#163a6b"/>
+    <path d="M60 300c18 10 26 32 22 56" fill="none" stroke="#1f6be0" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="80" cy="366" r="11" fill="none" stroke="#1f6be0" stroke-width="7"/>
+    <rect x="-26" y="180" width="52" height="72" rx="20" fill="#e8c9ab"/>
+    <ellipse cx="0" cy="104" rx="80" ry="94" fill="#f0d5b8"/>
+    <path d="M-82 100c-6-82 40-120 84-120s86 36 80 120c-12-40-36-60-82-64-38 4-68 24-82 64Z" fill="#26333a"/>
+  </g>
+  <!-- 右：物理治療師 -->
+  <g transform="translate(1130 420)">
+    <path d="M-130 420c0-120 58-200 130-200s130 80 130 200Z" fill="#1f6be0"/>
+    <rect x="-24" y="160" width="48" height="66" rx="20" fill="#e8c9ab"/>
+    <ellipse cx="0" cy="90" rx="72" ry="84" fill="#f0d5b8"/>
+    <path d="M-74 80c-4-66 32-98 76-98s78 30 74 98c-10-32-34-50-76-52-34 2-60 20-74 52Z" fill="#1c1c1c"/>
+  </g>
+</svg>
