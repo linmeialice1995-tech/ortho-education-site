@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>聯絡與看診資訊｜周以恆醫師｜骨科衛教</title>
+  <meta name="description" content="門診時間、診所地址、交通方式與線上掛號連結。（作品集示範：診所資料為虛構）">
+  <link rel="canonical" href="https://ortho-demo.pages.dev/contact">
+  <meta name="theme-color" content="#0d4552">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="周以恆醫師｜骨科衛教">
+  <meta property="og:title" content="看診資訊｜周以恆醫師">
+  <meta property="og:description" content="門診時間、診所地址、交通方式與線上掛號。">
+  <meta property="og:url" content="https://ortho-demo.pages.dev/contact">
+  <meta property="og:image" content="https://ortho-demo.pages.dev/assets/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="contact" data-root="">
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="麵包屑"><ol><li><a href="index.html">首頁</a></li><li aria-current="page">看診資訊</li></ol></nav>
+        <h1>聯絡與看診資訊</h1>
+        <p>門診時間、診所位置與掛號方式。看診前建議先確認當日門診是否異動。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2" style="gap:28px;align-items:start">
+          <div class="card">
+            <h2 style="font-size:21px" data-bind="clinic.name">〇〇骨科診所</h2>
+            <ul class="info-list">
+              <li><span data-icon="pin"></span><div><span class="label">地址</span><span class="value" data-bind="clinic.address"></span></div></li>
+              <li><span data-icon="phone"></span><div><span class="label">電話</span><a class="value" data-bind-href="clinic.phoneHref" data-bind="clinic.phone" href="#"></a></div></li>
+              <li><span data-icon="train"></span><div><span class="label">交通</span><ul class="value" data-list="clinic.transport" style="list-style:none;padding:0;margin:0;font-weight:500"></ul></div></li>
+            </ul>
+            <div class="hero-actions" style="margin-top:18px">
+              <a class="btn btn-primary" data-bind-href="clinic.bookingUrl" href="#"><span data-icon="calendar"></span>線上掛號</a>
+              <a class="btn btn-outline" data-bind-href="clinic.phoneHref" href="#"><span data-icon="phone"></span>撥打電話</a>
+              <a class="btn btn-outline" data-bind-href="clinic.lineUrl" href="#"><span data-icon="chat"></span>LINE 諮詢</a>
+            </div>
+          </div>
+          <div class="map-box">
+            <div>
+              <span data-icon="pin" style="display:block"></span>
+              <p style="margin:0 0 14px;color:var(--gray-700)">在地圖上查看診所位置</p>
+              <a class="btn btn-outline" data-bind-href="clinic.mapUrl" href="#">開啟 Google 地圖</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">門診時間</span>
+          <h2>每週門診表</h2>
+        </div>
+        <div data-schedule></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <div class="section-head">
+          <span class="eyebrow">看診前準備</span>
+          <h2>第一次看診，可以先準備這些</h2>
+        </div>
+        <ul class="prose">
+          <li>健保卡與身分證件。</li>
+          <li>目前使用中的藥物（或藥袋、藥單），包括保健食品。</li>
+          <li>過去的影像檢查（X 光、MRI 光碟）或其他醫院的檢查報告。</li>
+          <li>簡單記錄：疼痛從什麼時候開始、在哪裡、什麼動作會加重或減輕。</li>
+          <li>穿著方便露出疼痛部位的衣物，例如看膝蓋時穿寬鬆褲子。</li>
+        </ul>
+        <div class="callout callout-warn">
+          <div class="callout-title">緊急狀況請勿等待門診</div>
+          <p>嚴重外傷、肢體明顯變形、傷口大量出血、突然無法控制大小便、肢體突然無力或失去知覺，請立即前往急診或撥打 119。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/site-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

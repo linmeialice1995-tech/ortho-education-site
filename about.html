@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>醫師介紹｜周以恆醫師｜骨科衛教</title>
+  <meta name="description" content="周以恆醫師的學經歷、專業領域與看診理念。（作品集示範：醫師資料為虛構）">
+  <link rel="canonical" href="https://ortho-demo.pages.dev/about">
+  <meta name="theme-color" content="#0d4552">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="周以恆醫師｜骨科衛教">
+  <meta property="og:title" content="醫師介紹｜周以恆醫師">
+  <meta property="og:description" content="學經歷、專業領域與看診理念。">
+  <meta property="og:url" content="https://ortho-demo.pages.dev/about">
+  <meta property="og:image" content="https://ortho-demo.pages.dev/assets/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="about" data-root="">
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="麵包屑"><ol><li><a href="index.html">首頁</a></li><li aria-current="page">醫師介紹</li></ol></nav>
+        <h1>醫師介紹</h1>
+        <p>認識醫師的專業背景與看診理念。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container profile">
+        <div>
+          <img class="profile-photo" data-bind-src="doctor.photo" src="assets/img/doctor.svg" alt="醫師照片（示範用插圖）" width="320" height="400">
+        </div>
+        <div>
+          <span class="eyebrow" data-bind="doctor.title">骨科專科醫師</span>
+          <h2 style="font-size:30px"><span data-bind="doctor.nameWithTitle">周以恆 醫師</span> <span class="badge-demo">虛構示範</span></h2>
+          <p style="font-size:19px;color:var(--teal-800);font-weight:500" data-bind="doctor.tagline"></p>
+          <p data-bind="doctor.intro"></p>
+
+          <h2 style="margin-top:32px">專業領域</h2>
+          <ul class="tags" data-list="doctor.specialties" data-list-class="tag" style="margin-bottom:28px"></ul>
+
+          <div class="grid grid-2" style="gap:24px">
+            <div>
+              <h2>學歷</h2>
+              <ul class="timeline" data-list="doctor.education"></ul>
+            </div>
+            <div>
+              <h2>經歷</h2>
+              <ul class="timeline" data-list="doctor.experience"></ul>
+            </div>
+          </div>
+          <h2>證照與學會</h2>
+          <ul class="timeline" data-list="doctor.certifications"></ul>
+
+          <div class="callout">
+            <div class="callout-title">關於示範資料</div>
+            <p>本頁醫師姓名、照片與學經歷皆為作品集示範用的虛構資料，學經歷以「〇〇」佔位，不代表任何真實醫師或醫療機構。正式使用時請替換為醫師本人提供並查證的資料。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">看診理念</span>
+          <h2>把病情說清楚，是治療的第一步</h2>
+        </div>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>先找原因</h3>
+            <p>透過問診與理學檢查判斷疼痛來源，只在必要時安排影像檢查。</p>
+          </article>
+          <article class="card">
+            <h3>說明選項</h3>
+            <p>清楚說明保守治療、復健與手術等選項的效果與風險，一起討論最適合的方式。</p>
+          </article>
+          <article class="card">
+            <h3>重視自我照護</h3>
+            <p>運動、體重管理與生活習慣調整，往往是長期改善的關鍵。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head split">
+          <div>
+            <span class="eyebrow">看診資訊</span>
+            <h2>門診時間</h2>
+          </div>
+          <a class="link-more" href="contact.html">地址與交通 →</a>
+        </div>
+        <div data-schedule></div>
+        <div class="hero-actions" style="margin-top:24px">
+          <a class="btn btn-primary" data-bind-href="clinic.bookingUrl" href="#">線上掛號</a>
+          <a class="btn btn-outline" href="contact.html">聯絡與交通資訊</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/site-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

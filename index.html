@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>周以恆醫師｜骨科衛教｜膝蓋、肩膀、下背痛與骨質疏鬆衛教</title>
+  <meta name="description" content="骨科醫師整理的衛教文章：膝蓋退化性關節炎、五十肩、下背痛、骨折術後照護、腳踝扭傷與骨質疏鬆，用清楚易懂的方式說明。（作品集示範網站）">
+  <link rel="canonical" href="https://ortho-demo.pages.dev/">
+  <meta name="theme-color" content="#0d4552">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="周以恆醫師｜骨科衛教">
+  <meta property="og:title" content="周以恆醫師｜骨科衛教">
+  <meta property="og:description" content="膝蓋、肩膀、下背痛、骨折與骨質疏鬆衛教，用病人聽得懂的話說清楚。">
+  <meta property="og:url" content="https://ortho-demo.pages.dev/">
+  <meta property="og:image" content="https://ortho-demo.pages.dev/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "周以恆醫師｜骨科衛教（作品集示範）",
+    "url": "https://ortho-demo.pages.dev/",
+    "inLanguage": "zh-Hant-TW"
+  }
+  </script>
+</head>
+<body data-page="home" data-root="">
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <!-- Hero：醫師介紹 -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">骨科衛教｜ORTHOPEDIC CARE</span>
+          <h1>讓骨頭與關節的問題，<br><span class="accent">變得清楚、好理解。</span></h1>
+          <p class="hero-lead" data-bind="doctor.intro">專注於退化性關節疾病、運動傷害與骨折術後照護。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="articles.html">閱讀衛教文章 <span data-icon="arrowRight"></span></a>
+            <a class="btn btn-outline" href="contact.html">看診資訊</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="醫師簡介">
+          <img class="hero-photo" data-bind-src="doctor.photo" src="assets/img/doctor.svg" alt="醫師照片（示範用插圖）" width="180" height="220">
+          <div>
+            <h2 data-bind="doctor.nameWithTitle">周以恆 醫師</h2>
+            <p class="role"><span data-bind="doctor.title">骨科專科醫師</span> <span class="badge-demo">示範</span></p>
+            <ul class="tags" data-list="doctor.specialties" data-list-class="tag"></ul>
+            <p class="mt-0" style="margin-top:14px"><a class="link-more" href="about.html">完整醫師介紹 →</a></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 專長 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">專長領域</span>
+          <h2>從疼痛的原因開始，找到適合你的治療</h2>
+          <p>每一種疼痛背後的原因都不同。看診時會說明檢查結果、可行的治療選項與各自的優缺點，和你一起做決定。</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="card-icon" data-icon="knee"></div>
+            <h3>退化性關節疾病</h3>
+            <p>膝關節、髖關節退化的評估、運動處方與藥物治療，必要時討論手術選項。</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" data-icon="ankle"></div>
+            <h3>運動傷害</h3>
+            <p>腳踝扭傷、肌腱與韌帶傷害的診斷與復健，協助安全回到運動與日常生活。</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" data-icon="fracture"></div>
+            <h3>骨折與術後照護</h3>
+            <p>骨折處置、石膏照護與術後追蹤，配合復健讓功能逐步恢復。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 衛教分類 -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">衛教分類</span>
+          <h2>依身體部位找文章</h2>
+          <p>點選部位，查看相關的衛教文章。</p>
+        </div>
+        <div class="grid grid-6" id="category-grid"></div>
+      </div>
+    </section>
+
+    <!-- 最新文章 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head split">
+          <div>
+            <span class="eyebrow">最新文章</span>
+            <h2>最近更新的衛教內容</h2>
+          </div>
+          <a class="link-more" href="articles.html">查看全部文章 →</a>
+        </div>
+        <div class="grid grid-3" id="latest-articles" data-limit="3"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>需要進一步評估？</h2>
+            <p>衛教文章無法取代面對面看診。若疼痛持續或影響生活，歡迎預約門診。</p>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-light" data-bind-href="clinic.bookingUrl" href="#">線上掛號</a>
+            <a class="btn btn-outline" href="contact.html">門診時間與交通</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <noscript><p style="text-align:center;padding:16px">請啟用 JavaScript 以顯示完整導覽與文章列表。<a href="articles.html">衛教文章</a>｜<a href="about.html">醫師介紹</a>｜<a href="faq.html">常見問題</a>｜<a href="contact.html">看診資訊</a></p></noscript>
+  <script src="assets/js/site-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

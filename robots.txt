@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ortho-demo.pages.dev/sitemap.xml
