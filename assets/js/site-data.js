@@ -20,8 +20,7 @@ window.SITE = {
     interval: 3000, // 文字切換間隔（毫秒）；圖片每兩次文字切換換一張
     slides: [
       { src: "assets/img/hero-spine-model.jpg", alt: "腰椎模型，紅色標示椎間盤突出位置" },
-      { src: "assets/img/hero-spine-xray.jpg", alt: "脊椎 X 光影像" },
-      { src: "assets/img/hero-walking.jpg", alt: "夕陽下在步道散步的背影" }
+      { src: "assets/img/hero-spine-xray.jpg", alt: "脊椎 X 光影像" }
     ]
   },
 

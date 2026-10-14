@@ -206,7 +206,6 @@ git push -u origin main
 | --- | --- | --- |
 | `assets/img/hero-spine-model.jpg` | [Close-up of a human spine model with red disc](https://unsplash.com/photos/close-up-of-a-human-spine-model-with-red-disc-5thrMBqG5E0) | Julius Toltesi |
 | `assets/img/hero-spine-xray.jpg` | [X-ray of a human torso and shoulders](https://unsplash.com/photos/x-ray-of-a-human-torso-and-shoulders-seyqswzzbXw) | Rohit Choudhari |
-| `assets/img/hero-walking.jpg` | [Woman walking on pathway](https://unsplash.com/photos/woman-walking-on-pathway-sQzoEk9ZrRQ) | Neal E. Johnson |
 | `assets/img/gallery-operating-room.jpg` | [Operating room with surgical table](https://unsplash.com/photos/operating-room-with-surgical-table-LPurJnihmQI) | Marcel Scholte |
 | `assets/img/gallery-surgeons.jpg` | [Surgeons performing surgery in operating room](https://unsplash.com/photos/surgeons-performing-surgery-in-operating-room-KrsoedfRAf4) | National Cancer Institute |
 
