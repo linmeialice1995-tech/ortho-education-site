@@ -13,22 +13,22 @@ window.SITE = {
   isDemo: true, // 正式上線改成 false，會移除頂端「作品集示範」提示列
 
   /* 首頁大圖輪播與輪播文字
-     slides：換成診所或醫師照片時，把 src 改成照片路徑（建議 1600×1000，橫式 16:10）
+     slides：目前為 Unsplash 免費授權圖庫照片（來源見 README）；換成診所或醫師照片時，把 src 改成照片路徑（建議 1600×1000，橫式 16:10）
      words：標題「讓你重新＿＿」輪流顯示的文字 */
   hero: {
     words: ["好好走路", "安心睡覺", "回到工作", "享受生活"],
     interval: 3000, // 文字切換間隔（毫秒）；圖片每兩次文字切換換一張
     slides: [
-      { src: "assets/img/hero-consult.svg", alt: "醫師看診說明脊椎影像的示意插圖" },
-      { src: "assets/img/hero-spine.svg", alt: "腰椎與椎間盤的示意插圖" },
-      { src: "assets/img/hero-walk.svg", alt: "術後恢復、戶外散步的示意插圖" }
+      { src: "assets/img/hero-spine-model.jpg", alt: "腰椎模型，紅色標示椎間盤突出位置" },
+      { src: "assets/img/hero-spine-xray.jpg", alt: "脊椎 X 光影像" },
+      { src: "assets/img/hero-walking.jpg", alt: "夕陽下在步道散步的背影" }
     ]
   },
 
   /* 首頁照片區（兩張並排）：建議換成診間環境、手術室或團隊照片 */
   gallery: [
-    { src: "assets/img/gallery-or.svg", alt: "手術室示意插圖（請替換為實際照片）" },
-    { src: "assets/img/gallery-team.svg", alt: "醫療團隊示意插圖（請替換為實際照片）" }
+      { src: "assets/img/gallery-operating-room.jpg", alt: "手術室（示意照片，非本診所）" },
+      { src: "assets/img/gallery-surgeons.jpg", alt: "手術進行中的醫療團隊（示意照片，非本診所）" }
   ],
 
   /* 首頁「病人回饋」區塊

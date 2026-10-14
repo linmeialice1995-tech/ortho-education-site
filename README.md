@@ -197,3 +197,17 @@ git push -u origin main
 - 頁首、頁尾與導覽由 `main.js` 產生，修改導覽項目只需改一個地方（`NAV` 陣列）。
 - 文章列表的篩選條件會反映在網址上（例如 `articles.html?cat=knee`），可以直接分享特定分類。
 - 從文章列表進入文章後，按「返回文章列表」會保留原本的篩選條件。
+
+## 圖片來源
+
+首頁輪播與照片區使用 [Unsplash](https://unsplash.com) 的免費授權照片（[Unsplash License](https://unsplash.com/license)：可免費商用、不需標示來源；不得將照片原樣販售）。照片為示意用途，並非本診所或醫師的實際照片。
+
+| 檔案 | 照片 | 攝影者 |
+| --- | --- | --- |
+| `assets/img/hero-spine-model.jpg` | [Close-up of a human spine model with red disc](https://unsplash.com/photos/close-up-of-a-human-spine-model-with-red-disc-5thrMBqG5E0) | Julius Toltesi |
+| `assets/img/hero-spine-xray.jpg` | [X-ray of a human torso and shoulders](https://unsplash.com/photos/x-ray-of-a-human-torso-and-shoulders-seyqswzzbXw) | Rohit Choudhari |
+| `assets/img/hero-walking.jpg` | [Woman walking on pathway](https://unsplash.com/photos/woman-walking-on-pathway-sQzoEk9ZrRQ) | Neal E. Johnson |
+| `assets/img/gallery-operating-room.jpg` | [Operating room with surgical table](https://unsplash.com/photos/operating-room-with-surgical-table-LPurJnihmQI) | Marcel Scholte |
+| `assets/img/gallery-surgeons.jpg` | [Surgeons performing surgery in operating room](https://unsplash.com/photos/surgeons-performing-surgery-in-operating-room-KrsoedfRAf4) | National Cancer Institute |
+
+原本的示範插圖（`hero-*.svg`、`gallery-*.svg`）仍保留在 `assets/img/`，可隨時換回。正式上線時建議換成醫師與診所的實際照片。
