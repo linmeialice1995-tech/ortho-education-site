@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>周以恆醫師｜骨科衛教｜膝蓋、肩膀、下背痛與骨質疏鬆衛教</title>
-  <meta name="description" content="骨科醫師整理的衛教文章：膝蓋退化性關節炎、五十肩、下背痛、骨折術後照護、腳踝扭傷與骨質疏鬆，用清楚易懂的方式說明。（作品集示範網站）">
+  <title>周以恆醫師｜脊椎・骨科衛教｜腰椎椎間盤突出、椎管狹窄與脊椎手術</title>
+  <meta name="description" content="骨科專科醫師、脊椎外科醫師整理的衛教文章：腰椎椎間盤突出、腰椎管狹窄症、微創脊椎手術與術後復健，用清楚易懂的方式說明。（作品集示範網站）">
   <link rel="canonical" href="https://linmeialice1995-tech.github.io/ortho-education-site/">
   <meta name="theme-color" content="#0d4552">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_TW">
-  <meta property="og:site_name" content="周以恆醫師｜骨科衛教">
-  <meta property="og:title" content="周以恆醫師｜骨科衛教">
-  <meta property="og:description" content="膝蓋、肩膀、下背痛、骨折與骨質疏鬆衛教，用病人聽得懂的話說清楚。">
+  <meta property="og:site_name" content="周以恆醫師｜脊椎・骨科衛教">
+  <meta property="og:title" content="周以恆醫師｜脊椎・骨科衛教">
+  <meta property="og:description" content="腰椎椎間盤突出、腰椎管狹窄、微創脊椎手術與術後復健衛教，先把問題說清楚，再一起決定要不要開刀。">
   <meta property="og:url" content="https://linmeialice1995-tech.github.io/ortho-education-site/">
   <meta property="og:image" content="https://linmeialice1995-tech.github.io/ortho-education-site/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -29,7 +29,7 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "周以恆醫師｜骨科衛教（作品集示範）",
+    "name": "周以恆醫師｜脊椎・骨科衛教（作品集示範）",
     "url": "https://linmeialice1995-tech.github.io/ortho-education-site/",
     "inLanguage": "zh-Hant-TW"
   }
@@ -44,11 +44,11 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">骨科衛教｜ORTHOPEDIC CARE</span>
-          <h1>讓骨頭與關節的問題，<br><span class="accent">變得清楚、好理解。</span></h1>
-          <p class="hero-lead" data-bind="doctor.intro">專注於退化性關節疾病、運動傷害與骨折術後照護。</p>
+          <span class="eyebrow">脊椎外科｜SPINE CARE</span>
+          <h1>腰痛、腳麻，<br><span class="accent">先弄清楚原因，<br>再決定要不要開刀。</span></h1>
+          <p class="hero-lead" data-bind="doctor.intro">骨科專科醫師，以脊椎手術為主要專長。</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="articles.html">閱讀衛教文章 <span data-icon="arrowRight"></span></a>
+            <a class="btn btn-primary" href="articles.html?cat=lumbar">脊椎衛教文章 <span data-icon="arrowRight"></span></a>
             <a class="btn btn-outline" href="contact.html">看診資訊</a>
           </div>
         </div>
@@ -56,7 +56,7 @@
           <img class="hero-photo" data-bind-src="doctor.photo" src="assets/img/doctor.svg" alt="醫師照片（示範用插圖）" width="180" height="220">
           <div>
             <h2 data-bind="doctor.nameWithTitle">周以恆 醫師</h2>
-            <p class="role"><span data-bind="doctor.title">骨科專科醫師</span> <span class="badge-demo">示範</span></p>
+            <p class="role"><span data-bind="doctor.title">骨科專科醫師</span>・<span data-bind="doctor.focus">脊椎外科</span> <span class="badge-demo">示範</span></p>
             <ul class="tags" data-list="doctor.specialties" data-list-class="tag"></ul>
             <p class="mt-0" style="margin-top:14px"><a class="link-more" href="about.html">完整醫師介紹 →</a></p>
           </div>
@@ -69,43 +69,86 @@
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">專長領域</span>
-          <h2>從疼痛的原因開始，找到適合你的治療</h2>
-          <p>每一種疼痛背後的原因都不同。看診時會說明檢查結果、可行的治療選項與各自的優缺點，和你一起做決定。</p>
+          <h2>以脊椎手術為主的骨科專科醫師</h2>
+          <p>多數腰椎問題可以先從保守治療開始。當症狀持續影響生活、或出現神經壓迫的警訊時，再依檢查結果評估是否需要手術。</p>
         </div>
         <div class="grid grid-3">
           <article class="card">
-            <div class="card-icon" data-icon="knee"></div>
-            <h3>退化性關節疾病</h3>
-            <p>膝關節、髖關節退化的評估、運動處方與藥物治療，必要時討論手術選項。</p>
+            <div class="card-icon" data-icon="spine"></div>
+            <h3>腰椎退化性疾病</h3>
+            <p>腰椎椎間盤突出、坐骨神經痛與腰椎管狹窄症的診斷，以及保守治療與手術的評估。</p>
           </article>
           <article class="card">
-            <div class="card-icon" data-icon="ankle"></div>
-            <h3>運動傷害</h3>
-            <p>腳踝扭傷、肌腱與韌帶傷害的診斷與復健，協助安全回到運動與日常生活。</p>
+            <div class="card-icon" data-icon="surgery"></div>
+            <h3>脊椎手術</h3>
+            <p>神經減壓、椎間盤切除與脊椎融合等手術，依病情評估傳統或微創方式。</p>
           </article>
           <article class="card">
-            <div class="card-icon" data-icon="fracture"></div>
-            <h3>骨折與術後照護</h3>
-            <p>骨折處置、石膏照護與術後追蹤，配合復健讓功能逐步恢復。</p>
+            <div class="card-icon" data-icon="rehab"></div>
+            <h3>術後照護與復健</h3>
+            <p>從術後下床、傷口照護到恢復工作與運動，陪伴病人逐步回到日常生活。</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 治療路徑 -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">治療路徑</span>
+          <h2>不是每個脊椎問題都需要開刀</h2>
+          <p>從評估到復健，每一步都會說明清楚，讓你了解自己在哪個階段、接下來有哪些選擇。</p>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">1</span>
+            <h3>評估與診斷</h3>
+            <p>問診與神經學檢查，判斷疼痛與麻木的來源；需要時才安排 X 光或 MRI。</p>
+          </li>
+          <li class="step">
+            <span class="step-num">2</span>
+            <h3>保守治療</h3>
+            <p>保持活動、運動治療、藥物與注射等。許多病人在這個階段就能改善。</p>
+          </li>
+          <li class="step">
+            <span class="step-num">3</span>
+            <h3>手術評估</h3>
+            <p>症狀持續影響生活、神經功能惡化，且影像與症狀相符時，討論手術的效益與風險。</p>
+          </li>
+          <li class="step">
+            <span class="step-num">4</span>
+            <h3>術後復健</h3>
+            <p>術後早期下床活動，依恢復進度逐步運動、回到工作與日常生活。</p>
+          </li>
+        </ol>
+        <div class="callout callout-warn" style="margin-bottom:0">
+          <div class="callout-title">出現這些症狀，請立即就醫</div>
+          <p>腰痛或坐骨神經痛合併大小便失禁或解不出來、肛門會陰周圍麻木、雙腳快速變得無力，可能是馬尾症候群，需要緊急處理，請直接前往急診。</p>
         </div>
       </div>
     </section>
 
     <!-- 衛教分類 -->
-    <section class="section section-alt">
+    <section class="section">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">衛教分類</span>
-          <h2>依身體部位找文章</h2>
-          <p>點選部位，查看相關的衛教文章。</p>
+          <span class="eyebrow">脊椎專區</span>
+          <h2>脊椎疾病與手術衛教</h2>
+          <p>從腰椎疾病、手術方式到術後復健，依主題閱讀。</p>
         </div>
-        <div class="grid grid-6" id="category-grid"></div>
+        <div class="grid grid-3" data-category-grid="spine"></div>
+
+        <div class="section-head" style="margin:48px 0 20px">
+          <h2 style="font-size:22px">一般骨科衛教</h2>
+          <p>膝蓋、肩膀、骨折、扭傷與骨質疏鬆等常見問題。</p>
+        </div>
+        <div class="grid grid-5" data-category-grid="general"></div>
       </div>
     </section>
 
     <!-- 最新文章 -->
-    <section class="section">
+    <section class="section section-alt">
       <div class="container">
         <div class="section-head split">
           <div>
@@ -119,12 +162,12 @@
     </section>
 
     <!-- CTA -->
-    <section class="section" style="padding-top:0">
+    <section class="section">
       <div class="container">
         <div class="cta">
           <div>
-            <h2>需要進一步評估？</h2>
-            <p>衛教文章無法取代面對面看診。若疼痛持續或影響生活，歡迎預約門診。</p>
+            <h2>考慮脊椎手術前，先來好好聊聊</h2>
+            <p>衛教文章無法取代面對面看診。帶著你的檢查報告與疑問來門診，我們一起討論最適合的治療方式。</p>
           </div>
           <div class="hero-actions">
             <a class="btn btn-light" data-bind-href="clinic.bookingUrl" href="#">線上掛號</a>

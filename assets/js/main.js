@@ -46,6 +46,8 @@
     spine: S + '<rect x="8.5" y="2" width="7" height="3.6" rx="1.4"/><rect x="8" y="7.4" width="8" height="3.6" rx="1.4"/><rect x="8" y="12.8" width="8" height="3.6" rx="1.4"/><rect x="8.5" y="18.2" width="7" height="3.6" rx="1.4"/></svg>',
     fracture: S + '<path d="M4 20 9.5 14.5"/><path d="m14.5 9.5 5.5-5.5"/><path d="m9.5 14.5 1-3 2 1 1-3"/><path d="M3 18.5a1.5 1.5 0 1 0 2.5 2.5"/><path d="M18.5 3a1.5 1.5 0 1 1 2.5 2.5"/></svg>',
     ankle: S + '<path d="M9 2v9.5c0 1-.5 2-1.3 2.6L5 16a2.6 2.6 0 0 0 1.5 4.8H19a2 2 0 0 0 2-2v-.5a3 3 0 0 0-2.2-2.9l-3-1A2.5 2.5 0 0 1 14 12V2"/></svg>',
+    surgery: S + '<path d="M3 21 13.5 10.5"/><path d="m13.5 10.5 3-3a2.1 2.1 0 0 1 3 3l-3 3Z"/><path d="M16 13l-3-3"/><path d="M6 18l-1.5 1.5"/></svg>',
+    rehab: S + '<circle cx="13" cy="4" r="2"/><path d="m9 21 2.5-6.5L14 16v5"/><path d="M8 11.5 10.5 8h3.5l2 3 3 1"/><path d="m10.5 8-1 5.5"/></svg>',
     menu: S + '<path d="M4 7h16M4 12h16M4 17h16"/></svg>',
     close: S + '<path d="M6 6l12 12M18 6 6 18"/></svg>',
     arrowLeft: S + '<path d="M19 12H5M11 18l-6-6 6-6"/></svg>',
@@ -91,7 +93,7 @@
       '<a class="brand" href="' + url("index.html") + '">' +
       '<span class="brand-mark">' + ICONS.logo + "</span>" +
       '<span class="brand-text"><span class="brand-name">' + esc(SITE.doctor.nameWithTitle) + "</span>" +
-      '<span class="brand-sub">' + esc(SITE.doctor.title) + "｜骨科衛教</span></span></a>" +
+      '<span class="brand-sub">' + esc(SITE.doctor.title) + (SITE.doctor.focus ? "・" + esc(SITE.doctor.focus) : "") + "</span></span></a>" +
       '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="開啟選單">' + ICONS.menu + "</button>" +
       '<nav class="site-nav" id="site-nav" aria-label="主要導覽"><ul>' + links +
       '<li class="nav-cta"><a class="btn btn-primary" href="' + esc(SITE.clinic.bookingUrl) + '" target="_blank" rel="noopener">線上掛號</a></li>' +
@@ -185,15 +187,16 @@
     return SITE.articles.slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
   }
 
-  /* 首頁：分類 */
+  /* 首頁：分類（data-group 可只顯示 spine 或 general 分類） */
   function renderCategories() {
-    var el = document.getElementById("category-grid");
-    if (!el) return;
-    el.innerHTML = SITE.categories.map(function (c) {
-      return '<a class="cat-card" href="' + url("articles.html?cat=" + c.id) + '">' +
+    document.querySelectorAll("[data-category-grid]").forEach(function (el) {
+    var group = el.getAttribute("data-category-grid");
+    el.innerHTML = SITE.categories.filter(function (c) { return !group || c.group === group; }).map(function (c) {
+      return '<a class="cat-card' + (group === "spine" ? " cat-card-wide" : "") + '" href="' + url("articles.html?cat=" + c.id) + '">' +
         '<span class="card-icon">' + (ICONS[c.icon] || "") + "</span>" +
         "<strong>" + esc(c.name) + "</strong><span>" + esc(c.desc) + "</span></a>";
     }).join("");
+    });
   }
 
   /* 首頁：最新文章 */
@@ -279,8 +282,10 @@
     if (relEl) {
       var others = sortedArticles().filter(function (a) { return a.slug !== slug; });
       var same = others.filter(function (a) { return a.category === current.category; });
-      var rest = others.filter(function (a) { return a.category !== current.category; });
-      relEl.innerHTML = same.concat(rest).slice(0, 3).map(articleCard).join("");
+      var group = cat.group;
+      var sameGroup = others.filter(function (a) { return a.category !== current.category && categoryById(a.category).group === group; });
+      var rest = others.filter(function (a) { return categoryById(a.category).group !== group; });
+      relEl.innerHTML = same.concat(sameGroup, rest).slice(0, 3).map(articleCard).join("");
     }
 
     /* 若從文章列表點進來，返回時保留原本的篩選條件 */

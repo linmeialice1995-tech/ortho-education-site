@@ -17,6 +17,10 @@
 ├─ contact.html               聯絡與看診資訊
 ├─ 404.html                   找不到頁面（Cloudflare Pages 會自動使用）
 ├─ articles/                  衛教文章內頁（每篇一個檔案）
+│  ├─ lumbar-disc-herniation.html          腰椎椎間盤突出（脊椎）
+│  ├─ lumbar-spinal-stenosis.html          腰椎管狹窄症（脊椎）
+│  ├─ minimally-invasive-spine-surgery.html 微創脊椎手術與常見迷思（脊椎）
+│  ├─ spine-surgery-recovery.html          脊椎手術後的照護與復健（脊椎）
 │  ├─ knee-osteoarthritis.html   膝蓋疼痛與退化性關節炎
 │  ├─ frozen-shoulder.html       五十肩與肩膀疼痛
 │  ├─ low-back-pain.html         下背痛與脊椎保健
@@ -92,7 +96,7 @@ LINE 和 Facebook 的分享預覽不會執行 JavaScript，所以每個 HTML 檔
 4. 在 `site-data.js` 的 `articles` 陣列加入一筆資料（`slug` 與檔名相同）。
 5. 在 `sitemap.xml` 加入網址。
 
-新增分類：在 `site-data.js` 的 `categories` 加一筆資料，`icon` 可用 knee、shoulder、spine、fracture、ankle、bone。
+新增分類：在 `site-data.js` 的 `categories` 加一筆資料，`icon` 可用 spine、surgery、rehab、knee、shoulder、fracture、ankle、bone；`group` 填 `spine`（首頁脊椎專區）或 `general`（一般骨科）。
 
 ---
 

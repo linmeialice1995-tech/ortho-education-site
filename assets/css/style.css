@@ -202,7 +202,21 @@ ul, ol { padding-left: 1.3em; }
 .grid { display: grid; gap: 16px; }
 @media (min-width: 640px) { .grid-2, .grid-3 { grid-template-columns: repeat(2, 1fr); } .grid-6 { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 960px) { .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 24px; } .grid-6 { grid-template-columns: repeat(6, 1fr); } }
-.grid-6 { grid-template-columns: repeat(2, 1fr); }
+.grid-6, .grid-5 { grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 640px) { .grid-5 { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 960px) { .grid-5 { grid-template-columns: repeat(5, 1fr); } }
+
+/* 治療路徑步驟 */
+.steps { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 14px; counter-reset: none; }
+@media (min-width: 640px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .steps { grid-template-columns: repeat(4, 1fr); gap: 20px; } }
+.step { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 20px; position: relative; }
+.step h3 { font-size: 18px; margin: 10px 0 6px; }
+.step p { margin: 0; color: var(--gray-700); font-size: 15px; line-height: 1.75; }
+.step-num {
+  display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+  background: var(--teal-800); color: #fff; font-weight: 700; font-size: 16px;
+}
 
 .card {
   background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius);
@@ -225,6 +239,11 @@ ul, ol { padding-left: 1.3em; }
 .cat-card:hover { border-color: var(--teal-500); transform: translateY(-2px); box-shadow: var(--shadow); color: var(--gray-900); }
 .cat-card .card-icon { margin: 0; }
 .cat-card strong { font-size: 16px; color: var(--teal-900); }
+/* 脊椎專區：圖示在左、文字在右的橫向卡片 */
+.cat-card-wide { display: grid; grid-template-columns: 48px 1fr; column-gap: 16px; row-gap: 2px; align-items: center; padding: 20px; }
+.cat-card-wide .card-icon { grid-row: span 2; width: 48px; height: 48px; }
+.cat-card-wide strong { font-size: 18px; align-self: end; }
+.cat-card-wide span:not(.card-icon) { font-size: 14px; align-self: start; }
 .cat-card span { font-size: 13px; color: var(--gray-500); line-height: 1.5; }
 
 /* 文章卡 */

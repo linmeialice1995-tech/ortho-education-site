@@ -8,7 +8,7 @@
 
 window.SITE = {
   /* 網站基本設定 */
-  siteName: "周以恆醫師｜骨科衛教",
+  siteName: "周以恆醫師｜脊椎・骨科衛教",
   siteUrl: "https://linmeialice1995-tech.github.io/ortho-education-site", // 部署後改成正式網址（不要結尾斜線）
   isDemo: true, // 正式上線改成 false，會移除頂端「作品集示範」提示列
 
@@ -16,32 +16,33 @@ window.SITE = {
   doctor: {
     name: "周以恆",
     title: "骨科專科醫師",
+    focus: "脊椎外科",
     nameWithTitle: "周以恆 醫師",
     photo: "assets/img/doctor.svg", // 換成 assets/img/doctor.jpg（建議 4:5 直式）
     photoAlt: "周以恆醫師（示範用插圖）",
-    tagline: "用病人聽得懂的話，說清楚骨頭與關節的事。",
+    tagline: "先把脊椎的問題說清楚，再一起決定要不要開刀。",
     intro:
-      "專注於退化性關節疾病、運動傷害與骨折術後照護。看診時重視完整說明病情與治療選項，希望每一位病人回家後都知道自己可以做什麼。",
+      "骨科專科醫師，以脊椎手術為主要專長，包括腰椎椎間盤突出、腰椎管狹窄症的評估與手術治療。看診時重視說明保守治療與手術各自的效果與風險，並陪伴病人完成術後復健。",
     specialties: [
-      "膝關節退化與疼痛",
-      "肩關節疾病（五十肩等）",
-      "下背痛與脊椎保健",
-      "骨折治療與術後復健",
-      "運動傷害與腳踝扭傷",
-      "骨質疏鬆評估與預防"
+      "腰椎椎間盤突出、坐骨神經痛",
+      "腰椎管狹窄症",
+      "微創脊椎手術",
+      "脊椎術後照護與復健",
+      "下背痛評估與治療",
+      "一般骨科疾病"
     ],
     education: [
       "〇〇大學 醫學系 醫學士（示範欄位）",
       "〇〇大學 臨床醫學研究所 碩士（示範欄位）"
     ],
     experience: [
-      "〇〇醫院 骨科部 主治醫師（示範欄位）",
+      "〇〇醫院 骨科部 脊椎外科 主治醫師（示範欄位）",
       "〇〇醫院 骨科部 住院醫師、總醫師（示範欄位）",
-      "〇〇醫院 運動醫學中心 特約醫師（示範欄位）"
+      "〇〇醫院 脊椎外科 研究醫師（示範欄位）"
     ],
     certifications: [
       "部定骨科專科醫師（示範欄位，請填入證書字號）",
-      "〇〇醫學會 會員（示範欄位）"
+      "〇〇脊椎外科醫學會 會員（示範欄位）"
     ]
   },
 
@@ -70,20 +71,55 @@ window.SITE = {
     }
   },
 
-  /* 衛教分類 */
+  /* 衛教分類
+     group: "spine" = 首頁「脊椎專區」；"general" = 一般骨科 */
   categories: [
-    { id: "knee", name: "膝關節", desc: "膝蓋疼痛、退化性關節炎", icon: "knee" },
-    { id: "shoulder", name: "肩關節", desc: "五十肩、肩膀疼痛", icon: "shoulder" },
-    { id: "spine", name: "脊椎", desc: "下背痛、姿勢與脊椎保健", icon: "spine" },
-    { id: "fracture", name: "骨折與術後", desc: "骨折處置、石膏與術後照護", icon: "fracture" },
-    { id: "ankle", name: "足踝", desc: "腳踝扭傷、運動傷害", icon: "ankle" },
-    { id: "bone", name: "骨骼保健", desc: "骨質疏鬆、預防跌倒", icon: "bone" }
+    { id: "lumbar", name: "腰椎疾病", desc: "椎間盤突出、椎管狹窄、下背痛", icon: "spine", group: "spine" },
+    { id: "spine-surgery", name: "脊椎手術", desc: "微創手術、手術常見迷思", icon: "surgery", group: "spine" },
+    { id: "spine-rehab", name: "術後照護與復健", desc: "傷口、活動、運動與回診", icon: "rehab", group: "spine" },
+    { id: "knee", name: "膝關節", desc: "膝蓋疼痛、退化性關節炎", icon: "knee", group: "general" },
+    { id: "shoulder", name: "肩關節", desc: "五十肩、肩膀疼痛", icon: "shoulder", group: "general" },
+    { id: "fracture", name: "骨折照護", desc: "骨折處置、石膏照護", icon: "fracture", group: "general" },
+    { id: "ankle", name: "足踝", desc: "腳踝扭傷、運動傷害", icon: "ankle", group: "general" },
+    { id: "bone", name: "骨骼保健", desc: "骨質疏鬆、預防跌倒", icon: "bone", group: "general" }
   ],
 
   /* 衛教文章索引
      新增文章：1) 複製 articles/ 任一篇 HTML 修改內容
                2) 在下方加入一筆資料（slug 需與檔名相同） */
   articles: [
+    {
+      slug: "lumbar-disc-herniation",
+      title: "腰椎椎間盤突出：多數不用開刀，什麼時候該考慮手術？",
+      category: "lumbar",
+      excerpt: "腰痛合併腳麻、坐骨神經痛，可能是椎間盤突出。了解保守治療的效果、手術的時機，以及必須立即就醫的警訊。",
+      date: "2026-10-12",
+      readTime: 8
+    },
+    {
+      slug: "lumbar-spinal-stenosis",
+      title: "腰椎管狹窄症：走一段路腳就痠麻，坐下來就好？",
+      category: "lumbar",
+      excerpt: "走路走到一半腳痠麻、要停下來彎腰休息，是腰椎管狹窄的典型症狀。認識保守治療與減壓手術的選擇。",
+      date: "2026-10-09",
+      readTime: 7
+    },
+    {
+      slug: "minimally-invasive-spine-surgery",
+      title: "微創脊椎手術與常見迷思：開刀會不會癱瘓？",
+      category: "spine-surgery",
+      excerpt: "微創手術是什麼？一定要打骨釘嗎？開完刀是不是一輩子不能彎腰？整理病人最常擔心的脊椎手術問題。",
+      date: "2026-10-06",
+      readTime: 8
+    },
+    {
+      slug: "spine-surgery-recovery",
+      title: "脊椎手術後的照護與復健：回家後怎麼做恢復最好",
+      category: "spine-rehab",
+      excerpt: "術後多久可以下床、上班、開車？傷口與護具怎麼照顧？什麼時候開始運動？哪些症狀要馬上回診？",
+      date: "2026-10-03",
+      readTime: 8
+    },
     {
       slug: "knee-osteoarthritis",
       title: "膝蓋疼痛與退化性關節炎：運動是治療的核心",
@@ -103,7 +139,7 @@ window.SITE = {
     {
       slug: "low-back-pain",
       title: "下背痛與脊椎保健：多數會好轉，關鍵是保持活動",
-      category: "spine",
+      category: "lumbar",
       excerpt: "大多數下背痛不需要立刻照 X 光或 MRI。了解哪些警訊需要盡快就醫，以及日常姿勢與運動的建議。",
       date: "2026-09-17",
       readTime: 7
