@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ortho-demo.pages.dev/sitemap.xml
+Sitemap: https://linmeialice1995-tech.github.io/ortho-education-site/sitemap.xml

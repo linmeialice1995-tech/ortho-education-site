@@ -68,7 +68,7 @@ LINE 和 Facebook 的分享預覽不會執行 JavaScript，所以每個 HTML 檔
 | 搜尋 | 取代為 |
 | --- | --- |
 | `周以恆` | 醫師真實姓名 |
-| `https://ortho-demo.pages.dev` | 正式網址（包含 `robots.txt`、`sitemap.xml`） |
+| `https://linmeialice1995-tech.github.io/ortho-education-site` | 正式網址（包含 `robots.txt`、`sitemap.xml`、`site-data.js`） |
 
 分享預覽圖 `assets/img/og-image.png` 也包含醫師姓名，需要重新製作（1200×630 PNG）。
 
@@ -111,7 +111,22 @@ git remote add origin https://github.com/<你的帳號>/<repo名稱>.git
 git push -u origin main
 ```
 
-## 部署到 Cloudflare Pages
+## 部署到 GitHub Pages（目前使用）
+
+網址：<https://linmeialice1995-tech.github.io/ortho-education-site/>
+
+1. 儲存庫需設為 **Public**（GitHub 免費方案的限制）。
+2. 儲存庫 **Settings → Pages** → Source 選 **Deploy from a branch**，分支 **main**、資料夾 **/ (root)**，按 Save。
+3. 約 1–2 分鐘後網站上線。之後每次 `git push` 到 main 會自動更新。
+
+說明：
+
+- `.nojekyll` 讓 GitHub 不經 Jekyll 處理，檔案原樣發布。
+- GitHub Pages 支援不含 `.html` 的網址（例如 `/about`）。
+- `404.html` 會在網址不存在時自動顯示，並會自動判斷儲存庫路徑。
+- `_headers` 是 Cloudflare 專用設定，在 GitHub Pages 不會生效，也不影響網站。
+
+## 另一種選擇：部署到 Cloudflare Pages
 
 1. 登入 Cloudflare Dashboard → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**。
 2. 選擇剛剛的 GitHub repository。
@@ -124,7 +139,7 @@ git push -u origin main
 
 部署後：
 
-- 把全站的 `https://ortho-demo.pages.dev` 換成實際網址（見上方「SEO 與分享資訊」）。
+- 把全站網址換成 Cloudflare 給的實際網址（見上方「SEO 與分享資訊」）。
 - Cloudflare Pages 會自動提供不含 `.html` 的網址（例如 `/about`），站內連結使用 `.html` 也能正常運作。
 - `404.html` 會自動作為找不到頁面時的畫面。
 - 可以用 [LINE Page Poker](https://poker.line.naver.jp/) 檢查與刷新 LINE 分享預覽。

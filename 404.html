@@ -5,12 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>找不到頁面｜骨科衛教</title>
   <meta name="robots" content="noindex">
-  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <!-- 404 頁可能在任何路徑顯示：依網站根目錄設定 <base>，讓下方相對路徑都能正確載入。
+       GitHub Pages 專案網址為 https://帳號.github.io/儲存庫名稱/，根目錄是第一層路徑；其他主機為 "/"。 -->
+  <script>
+    (function () {
+      var seg = location.pathname.split("/")[1];
+      var root = /\.github\.io$/.test(location.hostname) && seg ? "/" + seg + "/" : "/";
+      document.write('<base href="' + root + '">');
+    })();
+  </script>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<!-- 404 頁可能在任何路徑顯示，因此使用根目錄絕對路徑（data-root="/"） -->
-<body data-page="404" data-root="/">
+<body data-page="404" data-root="">
   <div id="site-header"></div>
   <main id="main" class="section">
     <div class="container narrow center">
@@ -18,13 +26,13 @@
       <h1>找不到這個頁面</h1>
       <p>網址可能已變更，或文章已移除。可以回到首頁，或從衛教文章列表重新尋找。</p>
       <div class="hero-actions" style="justify-content:center">
-        <a class="btn btn-primary" href="/">回到首頁</a>
-        <a class="btn btn-outline" href="/articles">衛教文章</a>
+        <a class="btn btn-primary" href="index.html">回到首頁</a>
+        <a class="btn btn-outline" href="articles.html">衛教文章</a>
       </div>
     </div>
   </main>
   <div id="site-footer"></div>
-  <script src="/assets/js/site-data.js"></script>
-  <script src="/assets/js/main.js"></script>
+  <script src="assets/js/site-data.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

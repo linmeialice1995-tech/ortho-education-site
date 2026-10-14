@@ -9,7 +9,7 @@
 window.SITE = {
   /* 網站基本設定 */
   siteName: "周以恆醫師｜骨科衛教",
-  siteUrl: "https://ortho-demo.pages.dev", // 部署後改成正式網址（不要結尾斜線）
+  siteUrl: "https://linmeialice1995-tech.github.io/ortho-education-site", // 部署後改成正式網址（不要結尾斜線）
   isDemo: true, // 正式上線改成 false，會移除頂端「作品集示範」提示列
 
   /* 醫師資料 */
